@@ -1,22 +1,35 @@
-# Suma de dos números
-suma <- function(x = 5, y = 2) {
-
-  if (!is.numeric(x)) {
-    stop("El argumento 'x' debe ser numérico")
+#' Title
+#' Suma dos números
+#'
+#' La función `suma()` toma 2 números positivos y los suma
+#'
+#' Estos son los detalles extras de la función.
+#'
+#' @param x un vector numérico (debe ser positivo)
+#' @param y un vector numérico (debe ser positivo)
+#'
+#'
+#'
+#' @return
+#' Un vector numérico con la suma de `x` e `y`.
+#'
+#' @examples
+#' suma(2,2)
+#' suma(1,10)
+#'
+#'
+#' @export
+#'
+suma <- function(x, y) {
+  if (!is.numeric(x) | !is.numeric(y)) {
+    return("ERROR!, los parámetros deben ser numéricos")
   }
 
-  if (!is.numeric(y)) {
-    stop("El argumento 'y' debe ser numérico")
+  if (x < 0 | y < 0) {
+    return("Error! Sumo únicamente números positivos")
   }
-
-  if (sign(x) == -1) {
-    stop("No puedo sumar negativos: el argumento 'x' es negativo")
-  }
-  if (sign(y) == -1) {
-    stop("No puedo sumar negativos: el argumento 'y' es negativo")
-  }
-
 
   return(x + y)
 }
+
 
